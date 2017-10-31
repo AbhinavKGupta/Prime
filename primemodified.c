@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+#include <time.h>
+
+
+#define true 1
+
+#define false 0
+
+
+
+int main(){
+
+	clock_t start,end;						-- Define start and end times for clock
+
+	int prime, i;					
+
+	scanf("%d", &prime);
+
+	boolean flag = true;
+
+	start = clock();
+
+	for(i = 2; i < prime/2; i++){
+
+		if (prime % i == 0){
+
+			flag = false;
+
+		}
+
+	}
+
+	end = clock();
+
+	if(flag){
+
+		printf("Prime ---Time : %lu\n", (end-start) / CLOCKS_PER_SEC);
+
+		return 0;
+
+	}
+
+	printf("Prime ---Time : %lu\n", (end-start) / CLOCKS_PER_SEC);   --Time in seconds
+
+	return 0;
+
+}
